@@ -10,8 +10,6 @@ export enum Status {
     INACTIVE = 'INACTIVE'  
 }
 
-
-
 export class CreateUserDto {
     @IsString()
     @IsNotEmpty()
