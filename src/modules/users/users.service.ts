@@ -59,7 +59,13 @@ export class UsersService {
         where: { id },
         data: payload,
       });
-      return { message: 'Staff updated successfully', user: updatedUser };
+      
+      return { 
+        success:true,
+        message: 'Staff updated successfully',
+        data: updatedUser 
+      };
+
     } catch (error) {
       throw new BadRequestException('Failed to update user');
     }

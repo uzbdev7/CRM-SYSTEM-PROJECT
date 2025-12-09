@@ -109,7 +109,7 @@ model Teacher {
   email      String    @unique
   phone      String    @unique
   password   String
-  profession String[]
+  profession String
   branchId   Int
   status     Status    @default(ACTIVE)
   salary     Decimal   @db.Decimal(10, 2)
@@ -149,6 +149,7 @@ model Student {
   branchId     Int
   createdAt    DateTime       @default(now())
   updatedAt    DateTime?
+  
   studentGroup StudentGroup[]
   branch       Branch         @relation(fields: [branchId], references: [id])
 
