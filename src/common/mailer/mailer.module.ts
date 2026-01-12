@@ -12,7 +12,7 @@ import { MailerService } from "./mailer.service";
         service: "gmail",
         auth: {
           user: "mengilovahrorbek5@gmail.com",
-          pass: "lqxm pigx pldz kyqq", 
+          pass: "kkyh bfqc xauz fwtz", 
         }
       },
       defaults: {

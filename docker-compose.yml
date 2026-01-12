@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: db-nestjs
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: nestjs_app
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "7070:3000"
+    environment:
+      DATABASE_URL: postgres://postgres:12345@db:5432/db-nestjs?schema=public
+    command: sh -c "npx prisma db push && pnpm run start:dev"
+
+volumes:
+  db_data:

@@ -20,7 +20,10 @@ export class UsersController {
   }
 
   @Post('login')
-  async login(@Body() body: { email: string; password: string }, @Res() res: any) {
+  async login(
+    @Body() body: { email: string; password: string },
+    @Res({ passthrough: true }) res: any
+  ) {
     return this.usersService.login(body.email, body.password, res);
   }
   

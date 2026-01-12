@@ -36,7 +36,7 @@ export class BranchesService {
 
       if(!branchExist) throw new NotFoundException('Branch not found')
 
-      return {message:'All branches', data: branchExist};
+      return {message:'Branch', data: branchExist};
 
     } catch (error) {
       throw new BadRequestException('Failed to get branch.')

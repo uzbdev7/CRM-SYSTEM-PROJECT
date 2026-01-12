@@ -10,8 +10,6 @@ import { GroupsModule } from './modules/groups/groups.module';
 import { RoomsModule } from './modules/rooms/rooms.module';
 import { CoursesModule } from './modules/courses/courses.module';
 
-import { PrismaService } from '../prisma/prisma.service';
-
 @Module({
   imports: [
     UsersModule,
@@ -23,7 +21,7 @@ import { PrismaService } from '../prisma/prisma.service';
     CoursesModule,
   ],
   controllers: [AppController],
-  providers: [AppService, PrismaService],
+  providers: [AppService],
 
 })
 export class AppModule {}
